@@ -17,20 +17,20 @@ msgstr ""
 #. Default: "Special object"
 #: ./profiles/portal_atct.xml
 msgid "Special object"
-msgstr ""
+msgstr "Особливий об'єкт"
 
 #. Default: "Whether the object is marked as special."
 #: ./profiles/portal_atct.xml
 msgid "Whether the object is marked as special."
-msgstr ""
+msgstr "Чи помічений об'єкт як особливий."
 
 #. Default: "Mark this object as special."
 #: ./schemaextender.py:31
 msgid "help_flaggedobject"
-msgstr ""
+msgstr "Помітити даний об'єкт як особливий."
 
 #. Default: "Special object"
 #: ./schemaextender.py:29
 msgid "label_flaggedobject_title"
-msgstr ""
+msgstr "Особливий об'єкт"
 
