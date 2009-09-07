@@ -27,9 +27,9 @@ class ContentTypeExtender(object):
             languageIndependent = True,
             widget = BooleanWidget(
                 label = _(u"label_flaggedobject_title",
-                    default=u"Important element."),
+                    default=u"Special object"),
                 description = _(u"help_flaggedobject",
-                    default=u"Mark this element as special."),
+                    default=u"Mark this object as special."),
                 ),
             ),
         ]
