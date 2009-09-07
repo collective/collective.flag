@@ -1,4 +1,4 @@
-"""This is an integration "unit" test. It uses PloneTestCase, but does not
+"""This is an integration test. It uses PloneTestCase, but does not
 use doctest syntax.
 
 You will find lots of examples of this type of test in CMFPlone/tests, for 
