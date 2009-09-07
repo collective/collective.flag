@@ -19,11 +19,39 @@ class TestFlags(FlagTestCase):
         new_id = self.folder.invokeFactory('Document', 'my-page')
         self.assertEquals('my-page', new_id)
         
+    def test_index(self):
+        # We need to check whether the 'flaggedobject' index has been added to the catalog
+        catalog = getToolByName(self.portal, 'portal_catalog')
+        self.failUnless('flaggedobject' in catalog.indexes())
+
     def test_field_available(self):
         # Test that we have a field on objects
         new_id = self.folder.invokeFactory('Document', 'my-page')
         new_obj = getattr(self.folder, 'my-page')
-        self.failUnless(new_obj.Schema().has_key('flaggedobject'))    
+        self.failUnless(new_obj.Schema().has_key('flaggedobject'))
+        
+    def test_field_stored(self):
+        # Whether we can change the field and the value of it is getting stored
+        new_id = self.folder.invokeFactory('Document', 'my-page')
+        new_obj = getattr(self.folder, 'my-page')
+        field = new_obj.Schema().getField('flaggedobject')
+        field.set(new_obj, True)
+        self.failUnless(field.get(new_obj))
+
+    def test_value_stored_in_catalog(self):
+        new_id = self.folder.invokeFactory('Document', 'my-page')
+        new_obj = getattr(self.folder, 'my-page')
+        
+        field = new_obj.Schema().getField('flaggedobject')        
+        field.set(new_obj, True)
+        
+        self.setRoles(('Manager',))
+        new_obj.reindexObject()
+        catalog = getToolByName(self.portal, 'portal_catalog')
+        results = catalog.searchResults(flaggedobject = True)
+        
+        self.failUnless(len(results) == 1)
+        self.failUnless(results[0].id == 'my-page')
     
     # Keep adding methods here, or break it into multiple classes or
     # multiple files as appropriate. Having tests in multiple files makes
