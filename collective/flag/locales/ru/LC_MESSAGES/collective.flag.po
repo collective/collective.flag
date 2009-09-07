@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: collective.flag\n"
-"POT-Creation-Date: 2009-09-07 21:03+0000\n"
+"POT-Creation-Date: 2009-09-07 21:58+0000\n"
 "PO-Revision-Date: 2009-09-07 21:03+0000\n"
 "Last-Translator: Denys Mishunov <denys.mishunov AT gmail.com>\n"
 "Language-Team: Russian\n"
@@ -14,12 +14,24 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: collective.flag\n"
 
+#. Default: "Flagged object"
+#: ./profiles/portal_atct.xml
+msgid "Flagged object"
+msgstr ""
+
+#. Default: "Whether the item is marked as important."
+#: ./profiles/portal_atct.xml
+msgid "Whether the item is marked as important."
+msgstr ""
+
+#. Default: "Mark this element as special."
 #: ./schemaextender.py:31
 msgid "help_flaggedobject"
 msgstr ""
 
-#. Default: "Mark this object as important."
+#. Default: "Important element."
 #: ./schemaextender.py:29
+#, fuzzy
 msgid "label_flaggedobject_title"
-msgstr "Пометить этот элемент как важный"
+msgstr "Пометить этот элемент как важный."
 

@@ -2,7 +2,7 @@
 <atcttool
     xmlns:i18n="http://xml.zope.org/namespaces/i18n">
  <topic_indexes>
-  <index name="flaggedobject"
+  <index name="flaggedobject" i18n:domain="collective.flag"
      description="Whether the item is marked as important."
      enabled="True" friendlyName="Flagged object" 
      i18n:attributes="description; friendlyName">
