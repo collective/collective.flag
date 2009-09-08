@@ -7,9 +7,10 @@ objects in a Plone site |---| flagging them. An additional field added to the
 ``Settings`` schemata can be used to differentiate regular documents from the
 special ones. Possible use-cases:
 
-  * Put items to the frontpage. Usually not every most recent item should go
-    to the frontpage, but those having a special meaning;
-  * Allow to search for items that are special when building a ``Collection``.
+* Put items to the frontpage. Usually not every most recent item should go
+  to the frontpage, but those having a special meaning;
+
+* Allow to search for items that are special when building a ``Collection``.
 
   .. |---| unicode:: U+2014  .. em dash
 
