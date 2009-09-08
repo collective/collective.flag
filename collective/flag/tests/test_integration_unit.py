@@ -32,26 +32,17 @@ class TestFlags(FlagTestCase):
         
     def test_field_stored(self):
         # Whether we can change the field and the value of it is getting stored
-        new_id = self.folder.invokeFactory('Document', 'my-page')
+        new_obj = self.folder.invokeFactory('Document', 'my-page', flaggedobject=True)
         new_obj = getattr(self.folder, 'my-page')
         field = new_obj.Schema().getField('flaggedobject')
-        field.set(new_obj, True)
         self.failUnless(field.get(new_obj))
 
     def test_value_stored_in_catalog(self):
-        new_id = self.folder.invokeFactory('Document', 'my-page')
-        new_obj = getattr(self.folder, 'my-page')
-        
-        field = new_obj.Schema().getField('flaggedobject')        
-        field.set(new_obj, True)
-        
-        self.setRoles(('Manager',))
-        new_obj.reindexObject()
+        self.folder.invokeFactory('Document', 'my-page', flaggedobject=True)
         catalog = getToolByName(self.portal, 'portal_catalog')
         results = catalog.searchResults(flaggedobject = True)
-        
-        self.failUnless(len(results) == 1)
-        self.failUnless(results[0].id == 'my-page')
+        self.assertEqual(len(results), 1)
+        self.assertEqual(results[0].id, 'my-page')
     
     # Keep adding methods here, or break it into multiple classes or
     # multiple files as appropriate. Having tests in multiple files makes
