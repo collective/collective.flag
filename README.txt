@@ -31,4 +31,10 @@ The recommended solution is to override the translation for the
 more about how to do this in Plone 3.x or later here |---| `i18n, locales and
 Plone 3.0`__.
 
+
+Developed by **Jarn AS** — http://www.jarn.com
+
+Development sponsored by the **Bergen Public Library** - http://www.nettbiblioteket.no
+
   .. __: http://maurits.vanrees.org/weblog/archive/2007/09/i18n-locales-and-plone-3.0
+  
