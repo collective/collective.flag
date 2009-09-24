@@ -3,34 +3,12 @@ msgstr ""
 "Project-Id-Version: collective.flag\n"
 "POT-Creation-Date: 2009-09-07 22:05+0000\n"
 "PO-Revision-Date: 2009-09-07 21:03+0000\n"
-"Last-Translator: Andreas Zeidler\n"
-"Language-Team: German\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0\n"
-"Language-Code: de\n"
-"Language-Name: Deutsch\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: collective.flag\n"
-
-#. Default: "Special object"
-#: ./profiles/portal_atct.xml
-msgid "Special object"
-msgstr "Markiertes Objekt"
-
-#. Default: "Whether the object is marked as special."
-#: ./profiles/portal_atct.xml
-msgid "Whether the object is marked as special."
-msgstr "Dem Objekt wurde eine besondere Markierung hinzugefügt."
-
-#. Default: "Mark this object as special."
-#: ./schemaextender.py:31
-msgid "help_flaggedobject"
-msgstr "Fügen Sie diesem Objekt ein besondere Markierung hinzu."
-
-#. Default: "Special object"
-#: ./schemaextender.py:29
-msgid "label_flaggedobject_title"
-msgstr "Markiertes Objekt"
 
