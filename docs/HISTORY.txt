@@ -4,6 +4,15 @@ Changelog
 1.1 - Unreleased
 ----------------
 
+* Sanitized Norwegian translation.
+  [elvix]
+
+* Add empty english file to workaround bug in zope.i18n where fallback 
+  cannot be english if the catalog does not exist.
+  [gotcha]
+
+* Various cleanups.
+  [spliter, hannosch, witsch]
 
 1.0 - 2009-09-08
 ----------------
