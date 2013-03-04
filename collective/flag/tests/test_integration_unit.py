@@ -65,6 +65,23 @@ class TestFlags(FlagTestCase):
         self.assertEqual(collection.getQuery()[0].Title(),
                          "My Flagged Document")
 
+    def test_index_available_in_topics(self):
+        self.setRoles(('Manager', ))
+        self.folder.invokeFactory('Document', 'my-page', title="My Flagged Document", flaggedobject=True)
+
+        topicType = self.portal.portal_types.Topic
+        topicType.global_allow = True
+        # add a collection, so we can test a query on it
+        self.folder.invokeFactory("Topic", "topic")
+        topicType.global_allow = False
+
+        topic = self.folder.topic
+        crit = topic.addCriterion('flaggedobject', 'ATBooleanCriterion')
+        crit.setBool(True)
+
+        self.assertEqual(topic.queryCatalog()[0].Title,
+                         "My Flagged Document")
+
 
 def test_suite():
     """This sets up a test suite that actually runs the tests in the class
