@@ -1,0 +1,18 @@
+<!-- Operation Definitions -->
+<registry xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+          i18n:domain="plone">
+
+    <records interface="plone.app.querystring.interfaces.IQueryField"
+           prefix="plone.app.querystring.field.flaggedobject">
+    <value key="title">Flagged object</value>
+    <value key="description">Special object</value>
+    <value key="enabled">True</value>
+    <value key="sortable">True</value>
+    <value key="operations">
+        <element>plone.app.querystring.operation.boolean.isTrue</element>
+        <element>plone.app.querystring.operation.boolean.isFalse</element>
+    </value>
+    <value key="group">Metadata</value>
+  </records>
+
+</registry>

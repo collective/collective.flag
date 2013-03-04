@@ -5,7 +5,8 @@ You will find lots of examples of this type of test in CMFPlone/tests, for
 example.
 """
 
-import unittest
+import unittest2 as unittest
+
 from collective.flag.tests.base import FlagTestCase
 
 from Products.CMFCore.utils import getToolByName
@@ -42,9 +43,27 @@ class TestFlags(FlagTestCase):
     def test_value_stored_in_catalog(self):
         self.folder.invokeFactory('Document', 'my-page', flaggedobject=True)
         catalog = getToolByName(self.portal, 'portal_catalog')
-        results = catalog.searchResults(flaggedobject = True)
+        results = catalog.searchResults(flaggedobject=True)
         self.assertEqual(len(results), 1)
         self.assertEqual(results[0].id, 'my-page')
+
+    def test_index_available_in_collections(self):
+        self.setRoles(('Manager', ))
+        # add a collection, so we can test a query on it
+        self.folder.invokeFactory("Collection",
+                                  "collection",
+                                  title="New Collection")
+        self.folder.invokeFactory('Document', 'my-page', title="My Flagged Document", flaggedobject=True)
+
+        query = [{
+            'i': 'flaggedobject',
+            'o': 'plone.app.querystring.operation.boolean.isTrue',
+            'v': True,
+        }]
+        collection = getattr(self.folder, 'collection')
+        collection.setQuery(query)
+        self.assertEqual(collection.getQuery()[0].Title(),
+                         "My Flagged Document")
 
 
 def test_suite():
